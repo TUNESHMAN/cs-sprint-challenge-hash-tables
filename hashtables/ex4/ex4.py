@@ -3,6 +3,13 @@ def has_negatives(a):
     YOUR CODE HERE
     """
     # Your code here
+    cache = {}
+    result = []
+
+    for index, number in enumerate(a):
+        if number in cache:
+            result.append(abs(number))
+        cache[-number] = number
 
     return result
 
