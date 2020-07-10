@@ -11,10 +11,9 @@ def get_indices_of_item_weights(weights, length, limit):
         # Store the difference in a variable
         weight_result = difference
         if weight_result in cache:
-            if length == 2:
-                return(1, 0)
-            return (i, weight_result)
-        return None
+            return (i, cache[weight_result])
+        cache[current_weight] = i
+    return None
 
 
 def get_check(check):
